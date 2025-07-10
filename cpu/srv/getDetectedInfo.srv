@@ -1,0 +1,5 @@
+std_msgs/Time request_timestamp
+---
+BoundingBoxes bounding_box
+sensor_msgs/PointCloud2 pointcloud
+sensor_msgs/Image image

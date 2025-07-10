@@ -1,0 +1,18 @@
+<launch>
+    <!-- Robot namespace -->
+    <arg name="start_delay_seconds" default="1"/>
+
+    <!--Set parameters required for normal usage-->
+    <group ns="detection_parameters">
+        <rosparam file="$(find computation)/config/perception.yaml" />
+    </group>
+
+    <!-- Launch Node in charge of filtering pointcloud for more lightweight solution-->
+    <node name="passthrough_filter" pkg="octomap_related_nodes" type="filter_pointcloud" output="screen" launch-prefix="xterm -fs 13 -e" >
+    </node>
+
+    <!-- Launch Node in charge of generating octomap based on pointcloud information-->
+    <node name="pointcloud_2_octomap" pkg="octomap_related_nodes" type="octomap_from_cloudpoint" output="screen" launch-prefix="xterm -fs 13 -e" >
+    </node>
+
+</launch>

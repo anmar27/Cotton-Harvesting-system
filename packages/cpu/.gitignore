@@ -1,0 +1,7 @@
+src/computation/models/MobileSAM/*
+src/others/*
+src/computation/testing_pictures/*
+src/computation/config/__pycache__/*
+src/computation/__pycache__/*
+src/computation/states/__pycache__/*
+src/computation/utils/__pycache__/*

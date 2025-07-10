@@ -1,0 +1,24 @@
+    <launch>
+
+        <!-- Robot namespace -->
+        <arg name="robot_name" default="my_gen3"/>
+        <arg name="start_delay_seconds" default="5"/>
+
+        <!-- Launch FixFrame (Creation robot base)-->
+        <node name ="tf_static_broadcaster_node" pkg="computation" type="fixedframes.py" output="screen">
+        </node>
+
+        <!-- Launch cpu module (retrieve depth and location of cotton)-->
+        <node name="cpu_node" pkg="computation" type="cpu.py" output="screen">
+        </node>
+
+        <!--Launch gazebo Kinova Kortex -->
+        <include file="$(find kortex_gazebo)/launch/spawn_kortex_robot.launch"/>
+        
+
+        <!-- Launch the example in that namespace -->
+        <!--<node name="cotton_kinova_robot_movement" pkg="computation" type="kinovamovement.py" output="screen" launch-prefix="bash -c 'sleep $(arg start_delay_seconds); $0 $@' ">
+            <param name="robot_name" value="$(arg robot_name)"/>
+        </node>-->
+
+    </launch>

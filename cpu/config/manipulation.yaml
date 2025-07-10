@@ -1,7 +1,0 @@
-#This .yaml file describe the variables related to the manipulation process
-
-hardcoded_demo : "no"
-recheck_confidence_threshold : 0.3
-number_tries_recheck : 10
-
-
